@@ -4,8 +4,7 @@ Ein moderner, responsiver und präziser Gehaltsrechner für Deutschland (angepas
 
 ## 🚀 Live-Demo
 
-🔗 [Hier geht's zum Live-Projekt](vercel.com/kapliivladyslav-8859)
-
+🔗 https://gehalt-check.vercel.app/index.html
 ## ✨ Features
 
 - **Präzise Berechnung:** Automatische Berechnung von Lohnsteuer, Solidaritätszuschlag (falls zutreffend), Kirchensteuer sowie aller gesetzlichen Sozialversicherungsbeiträge (Renten-, Kranken-, Arbeitslosen- und Pflegeversicherung).
@@ -22,4 +21,4 @@ Ein moderner, responsiver und präziser Gehaltsrechner für Deutschland (angepas
 ## 🧑‍💻 Autor
 
 - **Name:** Vladyslav Kaplii
-- **GitHub:** [@dein-github-name](https://github.com/999belial)
+- **GitHub:** [999belial](https://github.com/999belial)
