@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontakt - GehaltCheck</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" type="image/png" href="./assets/img/icon.png" />
+    <style>
+      .contact-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 20px 80px 20px;
+        width: 100%;
+      }
+
+      .profile-card {
+        max-width: 550px;
+        width: 100%;
+        background-color: #ffffff;
+        border-radius: 20px;
+        box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+        border: 1px solid #e2e8f0;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .developer-info h3 {
+        font-size: 24px;
+        color: #0f172a;
+        margin-bottom: 6px;
+        font-weight: 800;
+      }
+
+      .dev-tag {
+        font-size: 15px;
+        color: #2563eb;
+        font-weight: 600;
+        margin-bottom: 25px;
+        display: block;
+      }
+
+      .dev-contact-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+        font-size: 15px;
+        color: #475569;
+      }
+
+      .dev-contact-row strong {
+        color: #1e293b;
+        font-weight: 600;
+      }
+
+      .dev-contact-row a {
+        color: #2563eb;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .dev-contact-row a:hover {
+        text-decoration: underline;
+      }
+
+      .github-btn-large {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        width: 100%;
+        padding: 18px;
+        background-color: #0f172a;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        margin-top: 30px;
+        transition: all 0.3s ease;
+      }
+
+      .github-btn-large:hover {
+        background-color: #1e293b;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2);
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo-container">
+        <div class="logo-icon">📊</div>
+        <a href="./index.html" class="logo-text">GehaltCheck</a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Rechner</a></li>
+          <li><a href="info.html" class="nav-link">Info</a></li>
+          <li><a href="kontakt.html" class="nav-link active">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="hero-section">
+        <h1 class="hero-title">Kontakt</h1>
+        <p class="hero-subtitle">
+          Informationen zum Entwickler dieses Projekts
+        </p>
+      </section>
+
+      <div class="contact-wrapper">
+        <div class="profile-card">
+          <div class="card-header">
+            <span class="card-icon icon-green">
+              <i class="fa-solid fa-code"></i>
+            </span>
+            <h2>Entwickler-Profil</h2>
+          </div>
+
+          <div class="developer-info">
+            <h3>Vladyslav Kaplii</h3>
+            <span class="dev-tag"
+              >Frontend Developer / Aspiring Software Developer</span
+            >
+
+            <div class="table-divider"></div>
+
+            <div class="dev-contact-row">
+              <strong>Standort:</strong>
+              <span>Rheinau, Baden-Württemberg</span>
+            </div>
+
+            <div class="dev-contact-row">
+              <strong>E-Mail:</strong>
+              <span
+                ><a href="mailto:vladyslav.kaplii@example.com"
+                  >kapliivladyslav@gmail.com</a
+                ></span
+              >
+            </div>
+
+            <div class="table-divider-thick"></div>
+
+            <a
+              href="https://github.com/999belial"
+              target="_blank"
+              class="github-btn-large"
+            >
+              <i class="fa-brands fa-github"></i>
+              GitHub Profile
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p class="footer-copyright">
+          &copy; 2026 GehaltCheck. Concept & Entwicklung als Portfolio-Projekt.
+        </p>
+        <nav class="footer-links">
+          <a href="impressum.html" class="footer-link">Impressum</a>
+          <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

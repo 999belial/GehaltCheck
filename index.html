@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GehaltCheck</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="icon" type="image/png" href="./assets/img/icon.png" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="logo-container">
+        <div class="logo-icon">📊</div>
+        <a href="./index.html" class="logo-text">GehaltCheck</a>
+      </div>
+
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="./index.html" class="nav-link active">Rechner</a></li>
+          <li><a href="./info.html" class="nav-link">Info</a></li>
+          <li><a href="./kontakt.html" class="nav-link">Kontakt</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main-content">
+      <section class="hero-section">
+        <h1 class="hero-title" data-i18n="hero_title">Gehaltsrechner 2026</h1>
+        <p class="hero-subtitle" data-i18n="hero_subtitle">
+          Berechnen Sie Ihr Nettoeinkommen aus dem Bruttolohn
+        </p>
+      </section>
+
+      <div class="calculator-container">
+        <form class="calc-card input-card" id="tax-form">
+          <div class="card-header">
+            <span class="card-icon icon-blue">€</span>
+            <h2 data-i18n="card_eingaben">Eingaben</h2>
+          </div>
+          <div class="lang-switcher">
+            <button type="button" class="btn-lang" data-lang="en">EN</button>
+            <button type="button" class="btn-lang" data-lang="uk">UA</button>
+          </div>
+
+          <div class="input-group">
+            <label for="brutto" data-i18n="label_brutto"
+              >Monatliches Bruttogehalt</label
+            >
+            <div class="input-with-currency">
+              <input
+                type="number"
+                id="brutto"
+                placeholder="3500"
+                min="0"
+                required
+              />
+              <span class="currency-symbol">€</span>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="bundesland" data-i18n="label_bundesland"
+              >Bundesland</label
+            >
+            <select id="bundesland">
+              <option value="BW" selected>Baden-Württemberg</option>
+              <option value="BY">Bayern</option>
+              <option value="BE">Berlin</option>
+              <option value="BB">Brandenburg</option>
+              <option value="HB">Bremen</option>
+              <option value="HH">Hamburg</option>
+              <option value="HE">Hessen</option>
+              <option value="MV">Mecklenburg-Vorpommern</option>
+              <option value="NI">Niedersachsen</option>
+              <option value="NW">Nordrhein-Westfalen</option>
+              <option value="RP">Rheinland-Pfalz</option>
+              <option value="SL">Saarland</option>
+              <option value="SN">Sachsen</option>
+              <option value="ST">Sachsen-Anhalt</option>
+              <option value="SH">Schleswig-Holstein</option>
+              <option value="TH">Thüringen</option>
+            </select>
+          </div>
+
+          <div class="input-group">
+            <label for="steuerklasse" data-i18n="label_steuerklasse"
+              >Steuerklasse</label
+            >
+            <select id="steuerklasse">
+              <option value="1" data-i18n="sk_1">
+                Klasse 1 - Ledig, geschieden, verwitwet
+              </option>
+              <option value="2" data-i18n="sk_2">
+                Klasse 2 - Alleinerziehend
+              </option>
+              <option value="3" data-i18n="sk_3">
+                Klasse 3 - Verheiratet (Höheres Einkommen)
+              </option>
+              <option value="4" data-i18n="sk_4">
+                Klasse 4 - Verheiratet (Gleiches Einkommen)
+              </option>
+              <option value="5" data-i18n="sk_5">
+                Klasse 5 - Verheiratet (Geringeres Einkommen)
+              </option>
+              <option value="6" data-i18n="sk_6">
+                Klasse 6 - Zweitjob / Nebeneinkunft
+              </option>
+            </select>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="kirchensteuer" />
+            <label for="kirchensteuer">
+              <strong data-i18n="church_title">Kirchensteuer</strong>
+              <span data-i18n="church_sub"
+                >Mitglied einer Religionsgemeinschaft</span
+              >
+            </label>
+          </div>
+
+          <div class="checkbox-group">
+            <input type="checkbox" id="kinder" />
+            <label for="kinder">
+              <strong data-i18n="kinder_title">Kinder</strong>
+              <span data-i18n="kinder_sub"
+                >Kinderfreibetrag berücksichtigen</span
+              >
+            </label>
+          </div>
+
+          <button type="submit" class="btn-berechnen" data-i18n="btn_berechnen">
+            Berechnen
+          </button>
+        </form>
+
+        <div class="calc-card result-card">
+          <div class="card-header">
+            <span class="card-icon icon-green">📉</span>
+            <h2 data-i18n="card_ergebnis">Ergebnis</h2>
+          </div>
+
+          <div class="result-placeholder" id="placeholder-box">
+            <div class="placeholder-icon">🖩</div>
+            <p data-i18n="placeholder_text">
+              Guten Tag! Geben Sie Ihre Daten ein und klicken Sie auf
+              "Berechnen"
+            </p>
+          </div>
+
+          <div class="result-display hidden" id="results-box">
+            <div class="results-table">
+              <div class="table-row row-brutto">
+                <span data-i18n="res_brutto_lbl">Bruttogehalt</span>
+                <span class="value" id="res-brutto">0,00 €</span>
+              </div>
+
+              <div class="table-divider"></div>
+
+              <div class="table-row text-red">
+                <span data-i18n="res_lohnsteuer_lbl">Lohnsteuer</span>
+                <span class="value" id="res-lohnsteuer">-0,00 €</span>
+              </div>
+
+              <div
+                class="table-row text-red"
+                id="row-church"
+                style="display: none"
+              >
+                <span data-i18n="res_church_lbl">Kirchensteuer</span>
+                <span class="value" id="res-church">-0,00 €</span>
+              </div>
+
+              <div class="table-divider"></div>
+
+              <div class="table-row text-orange">
+                <span data-i18n="res_rente_lbl">Rentenversicherung</span>
+                <span class="value" id="res-rente">-0,00 €</span>
+              </div>
+
+              <div class="table-row text-orange">
+                <span data-i18n="res_kranken_lbl">Krankenversicherung</span>
+                <span class="value" id="res-kranken">-0,00 €</span>
+              </div>
+
+              <div class="table-row text-orange">
+                <span data-i18n="res_arbeit_lbl">Arbeitslosenversicherung</span>
+                <span class="value" id="res-arbeit">-0,00 €</span>
+              </div>
+
+              <div class="table-row text-orange">
+                <span data-i18n="res_pflege_lbl">Pflegeversicherung</span>
+                <span class="value" id="res-pflege">-0,00 €</span>
+              </div>
+
+              <div class="table-divider-thick"></div>
+
+              <div class="netto-result-card">
+                <div class="result-label" data-i18n="netto_title">
+                  Ihr Nettolohn
+                </div>
+                <div class="result-value" id="res-netto">0,00 €</div>
+                <div class="result-sub-label" data-i18n="pro_monat">
+                  pro Monat
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p class="footer-copyright">
+          &copy; 2026 GehaltCheck. Сoncept & Entwicklung als Portfolio-Projekt.
+        </p>
+        <nav class="footer-links">
+          <a href="impressum.html" class="footer-link">Impressum</a>
+          <a href="datenschutz.html" class="footer-link">Datenschutz</a>
+        </nav>
+      </div>
+    </footer>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
