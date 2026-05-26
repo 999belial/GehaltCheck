@@ -1,6 +1,6 @@
 # GehaltCheck 2026
 
-Ein moderner, responsiver und präziser Gehaltsrechner für Deutschland (angepasst an die Steuerrichtlinien für das Jahr 2026). Dieses Projekt wurde als interaktives Portfolio-Stück entwickelt, um fortgeschrittene Fähigkeiten in der Front-End-Webentwicklung zu demonstrieren.
+Ein moderner, responsiver und präziser Gehaltsrechner für Deutschland (angepasst an die Steuerrichtlinien für das Jahr 2026). Dieses Projekt wurde als interaktives Portfolio-Stück entwickelt, um fortgeschrittene Fähigkeiten in der Front-End-Webentwicklung zu demonstrieren. Die Formeln zur Steuerberechnung (Lohnsteuer, Pflegeversicherung) sind vereinfacht und angepasst, um die Codelogik zu demonstrieren.
 
 ## 🚀 Live-Demo
 
